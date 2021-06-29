@@ -207,6 +207,7 @@ const Login = styled.a`
   border: 1px solid #f9f9f9;
   border-radius: 4px;
   transition: all 0.2s ease 0s;
+  cursor: pointer;
 
   &:hover {
     background-color: #f9f9f9;
@@ -217,7 +218,7 @@ const Login = styled.a`
 
 const DropDown = styled.div`
   position: absolute;
-  top: 55px;
+  top: 70px;
   right: 0px;
   background: rgb(19, 19, 19);
   border: 1px solid rgba(151, 151, 151, 0.34);
@@ -228,19 +229,22 @@ const DropDown = styled.div`
   letter-spacing: 3px;
   width: 100px;
   opacity: 0;
+  transition: all 0.2s ease 0s;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #f9f9f9;
+    color: #000;
+    border-color: transparent;
+  }
 `;
 
 const DropDownContainer = styled.div`
   position: relative;
   display: flex;
   align-items: center;
-
-  &:hover {
-    ${DropDown} {
-      opacity: 1;
-      transition-duration: 1s;
-    }
-  }
+  cursor: pointer;
+  height: 100%;
 
   &:hover {
     ${DropDown} {
