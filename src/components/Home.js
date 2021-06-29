@@ -20,10 +20,9 @@ const Home = (props) => {
   let trending = [];
 
   useEffect(() => {
-    console.log("hello");
     db.collection("movies").onSnapshot((snapshot) => {
-      snapshot.docs.map((doc) => {
-        console.log(recommends);
+      //console.log(snapshot);
+      snapshot.docs.forEach((doc) => {
         switch (doc.data().type) {
           case "recommend":
             recommends = [...recommends, { id: doc.id, ...doc.data() }];
@@ -40,6 +39,7 @@ const Home = (props) => {
           case "trending":
             trending = [...trending, { id: doc.id, ...doc.data() }];
             break;
+          default:
         }
       });
 
